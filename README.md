@@ -1,9 +1,4 @@
 # Hiado
-    __  ___           __    
-   / / / (_)___ _____/ /___ 
-  / /_/ / / __ `/ __  / __ \
- / __  / / /_/ / /_/ / /_/ /
-/_/ /_/_/\__,_/\__,_/\____/ 
 
 **Cross-projects Repository permissions enumeration Tool for Azure DevOps**
 
