@@ -4,7 +4,7 @@
 
 ## What does Hiado do? 
 
-Hiado is a python script that helps you enumerate information about the repositories your organziation manages within Azure DevOps. Particular focus is given to the enumeration of the permissions a specific user has, these can be: 
+Hiado is a python script that helps you enumerate information about the repositories your organization manages within Azure DevOps. Particular focus is given to the enumeration of the permissions a specific user has, these can be: 
 
 * Bypass policies when completing pull requests
 * Bypass policies when pushing
