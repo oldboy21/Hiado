@@ -180,9 +180,8 @@ def retrieve_repository_permissions(
         },
     }
 
-    response = requests.post(url, headers=headers, data=json.dumps(payload_json))
-
     try:
+        response = requests.post(url, headers=headers, data=json.dumps(payload_json))
         return (
             response.json()
             .get("dataProviders", {})
@@ -220,8 +219,11 @@ def find_text_in_file(
         "$orderBy": [{"field": "filename", "sortOrder": "ASC"}],
         "includeFacets": "true",
     }
-    response = requests.post(url, headers=headers, data=json.dumps(payload_json))
-    return response.json()
+    try:
+        response = requests.post(url, headers=headers, data=json.dumps(payload_json))
+        return response.json()
+    except Exception:
+        return None
 
 
 def get_pipeline_details(url, headers):
@@ -446,8 +448,9 @@ for project in projects_list:
     print("[+] Found projectID: " + project_id)
     print("[+] Found repository permissionSet: " + permissionset)
 
+    # get list of pipelines in project
     pipeline_list = get_list_pipelines(user_token, project_name, organization)
-
+    # get list of repository in project
     repositories = get_repository_list(organization, project_id, user_token)
     if repositories is None:
         continue
